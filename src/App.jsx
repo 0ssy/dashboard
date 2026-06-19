@@ -1,13 +1,14 @@
 import { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/Dashboard";
+import NanobotWorld from "./components/NanobotWorld";
 
 export default function App() {
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen bg-[#FFF9E8]">
+    <div className="relative flex min-h-screen bg-[#FFF9E8]">
       <Sidebar
         collapsed={collapsed}
         setCollapsed={setCollapsed}
@@ -15,6 +16,7 @@ export default function App() {
         setMobileOpen={setMobileOpen}
       />
       <Dashboard onMenuClick={() => setMobileOpen(true)} />
+      <NanobotWorld />
     </div>
   );
 }
